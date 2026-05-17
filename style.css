@@ -1,0 +1,149 @@
+/* 글로벌 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Malgun Gothic', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a; /* 다크 테마 */
+    color: #f0f0f0;
+}
+
+/* 내비게이션 바 */
+.navbar {
+    background-color: #2c2c2c;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    background: none;
+    border: none;
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #a0a0a0;
+    cursor: pointer;
+}
+
+.nav-item.active, .nav-item:hover {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* 콘텐츠 영역 */
+.content-area {
+    margin-top: 80px; /* 내비게이션 바 높이 고려 */
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-section {
+    display: none; /* 기본적으로 숨김 */
+}
+
+.content-section.active {
+    display: block; /* 활성화된 섹션만 표시 */
+}
+
+/* 홈 화면 프로필 카드 */
+.profile-card {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.profile-card .logo {
+    max-width: 200px;
+    margin-bottom: 1rem;
+}
+
+.profile-text p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 세계 시각 섹션 */
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.clock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* 🌍 새로운 시계 카드 디자인 */
+.clock-card {
+    background-color: #333333;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.clock-card:hover {
+    transform: translateY(-5px);
+}
+
+.clock-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.city-flag {
+    font-size: 2rem;
+}
+
+.city-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.digital-time {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.ampm-date {
+    color: #a0a0a0;
+    text-align: center;
+}
