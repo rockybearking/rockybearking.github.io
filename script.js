@@ -5,7 +5,7 @@ const cities = [
     { name: 'Paris', timezone: 'Europe/Paris', flag: '🇫🇷' },
     { name: 'Tokyo', timezone: 'Asia/Tokyo', flag: '🇯🇵' },
     { name: 'London', timezone: 'Europe/London', flag: '🇬🇧' },
-    { name: 'Los Angeles', timezone: 'America/Los_Angeles', flag: '🇺🇸' }
+    { name: 'Los Angeles', timezone: 'America/Los_Angeles', flag: '🇺🇸' },
     { name: 'Shanghai', timezone: 'Asia/Shanghai', flag: '🇨🇳' }
 ];
 
