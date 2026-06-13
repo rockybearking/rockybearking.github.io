@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이재원의 포트폴리오 툴박스</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -43,8 +44,25 @@
         <section id="roulette-section" class="content-section">
             <h1 class="section-title">랜덤랜덤 돌림판</h1>
             <div class="roulette-wrapper">
+                
                 <div class="roulette-settings">
                     <button id="add-roulette-item" class="add-btn">+ 숫자 추가 (1~200)</button>
+
+                    <div class="roulette-options">
+                        <div class="option-row">
+                            <span class="option-title">⏳ 멈춤 시간:</span>
+                            <label><input type="radio" name="spinTime" value="2"> 2초</label>
+                            <label><input type="radio" name="spinTime" value="3" checked> 3초</label>
+                            <label><input type="radio" name="spinTime" value="5"> 5초</label>
+                            <label><input type="radio" name="spinTime" value="10"> 10초</label>
+                            <label><input type="radio" name="spinTime" value="manual"> 직접</label>
+                        </div>
+                        <div class="option-row">
+                            <span class="option-title">🗑️ 자동 제외:</span>
+                            <label><input type="checkbox" id="auto-remove"> 나타났던 숫자는 자동으로 제외</label>
+                        </div>
+                    </div>
+                    
                     <div class="table-header">
                         <span>숫자</span>
                         <span>개수</span>
