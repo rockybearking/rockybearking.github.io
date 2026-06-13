@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이재원의 포트폴리오 툴박스</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="nav-logo" id="home-btn">🏠 홈(눌러보시오)</button>
+            <div class="nav-links">
+                <a href="#" class="nav-item active" data-section="worldclock">세계 시각</a>
+                <a href="#" class="nav-item" data-section="roulette">랜덤 돌림판</a>
+                <a href="#" class="nav-item" data-section="calculator">계산기</a>
+                <a href="#" class="nav-item" data-section="generator">난수 생성기</a>
+                <a href="#" class="nav-item" data-section="stopwatch">스톱워치</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-area">
+        
+        <section id="home-section" class="content-section">
+            <div class="profile-card">
+                <img src="Yonsei.Logo.jpg" alt="연세대학교 로고" class="logo">
+                <div class="profile-text">
+                    <p>연세대학교</p>
+                    <p>이재원</p>
+                    <p>소프트웨어학부</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="worldclock-section" class="content-section active">
+            <h1 class="section-title">세계 시각 (새로운 디자인)</h1>
+            <div class="clock-grid" id="clock-container">
+                </div>
+        </section>
+
+        <section id="roulette-section" class="content-section">
+            <h1 class="section-title">랜덤랜덤 돌림판</h1>
+            <div class="roulette-wrapper">
+                <div class="roulette-settings">
+                    <button id="add-roulette-item" class="add-btn">+ 숫자 추가 (1~200)</button>
+                    <div class="table-header">
+                        <span>숫자</span>
+                        <span>개수</span>
+                        <span>비율(%)</span>
+                        <span>삭제</span>
+                    </div>
+                    <div id="roulette-inputs"></div>
+                </div>
+
+                <div class="roulette-board">
+                    <div class="canvas-container">
+                        <canvas id="roulette-canvas" width="400" height="400"></canvas>
+                        <div class="needle">▼</div>
+                    </div>
+                    <button id="spin-btn" class="spin-btn">돌리기</button>
+                    <div id="spin-result" class="spin-result">결과가 여기에 표시됩니다.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
