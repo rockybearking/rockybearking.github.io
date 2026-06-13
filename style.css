@@ -7,11 +7,10 @@
 }
 
 body {
-    background-color: #1a1a1a; /* 다크 테마 */
+    background-color: #1a1a1a;
     color: #f0f0f0;
 }
 
-/* 내비게이션 바 */
 .navbar {
     background-color: #2c2c2c;
     padding: 1rem;
@@ -54,24 +53,17 @@ body {
     font-weight: bold;
 }
 
-/* 콘텐츠 영역 */
 .content-area {
-    margin-top: 80px; /* 내비게이션 바 높이 고려 */
+    margin-top: 80px;
     padding: 2rem;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.content-section {
-    display: none; /* 기본적으로 숨김 */
-}
+.content-section { display: none; }
+.content-section.active { display: block; }
 
-.content-section.active {
-    display: block; /* 활성화된 섹션만 표시 */
-}
-
-/* 홈 화면 프로필 카드 */
 .profile-card {
     background-color: #ffffff;
     color: #000000;
@@ -93,7 +85,6 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* 세계 시각 섹션 */
 .section-title {
     text-align: center;
     margin-bottom: 2rem;
@@ -105,7 +96,6 @@ body {
     gap: 1.5rem;
 }
 
-/* 🌍 기존 시계 카드 디자인 유지 */
 .clock-card {
     background-color: #333333;
     padding: 1.5rem;
@@ -117,9 +107,7 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.clock-card:hover {
-    transform: translateY(-5px);
-}
+.clock-card:hover { transform: translateY(-5px); }
 
 .clock-header {
     display: flex;
@@ -128,29 +116,17 @@ body {
     margin-bottom: 1rem;
 }
 
+/* 윈도우 국기 이모지 표시용 */
 .city-flag {
     font-size: 2rem;
+    font-family: 'Noto Color Emoji', sans-serif; 
 }
 
-.city-name {
-    font-size: 1.3rem;
-    font-weight: bold;
-}
+.city-name { font-size: 1.3rem; font-weight: bold; }
+.digital-time { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+.ampm-date { color: #a0a0a0; text-align: center; }
 
-.digital-time {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.ampm-date {
-    color: #a0a0a0;
-    text-align: center;
-}
-
-/* =========================================
-   🎲 여기서부터 랜덤 돌림판 전용 추가 스타일
-   ========================================= */
+/* 🎲 랜덤 돌림판 */
 .roulette-wrapper {
     display: flex;
     gap: 2rem;
@@ -166,6 +142,44 @@ body {
     flex: 1;
     min-width: 300px;
     max-width: 500px;
+}
+
+/* 🛠️ 추가된 돌림판 옵션 UI 디자인 */
+.roulette-options {
+    background-color: #262626;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.option-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.option-title {
+    font-weight: bold;
+    color: #007bff;
+    min-width: 80px;
+}
+
+.option-row label {
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.option-row input[type="radio"], 
+.option-row input[type="checkbox"] {
+    cursor: pointer;
 }
 
 .add-btn {
@@ -207,31 +221,11 @@ body {
     text-align: center;
 }
 
-.roulette-item-row input:disabled {
-    background-color: #555;
-    color: #888;
-    cursor: not-allowed;
-}
+.roulette-item-row input:disabled { background-color: #555; color: #888; cursor: not-allowed; }
+.delete-btn { background-color: #ff4d4d; color: white; border: none; border-radius: 4px; cursor: pointer; }
 
-.delete-btn {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.roulette-board {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.canvas-container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-}
+.roulette-board { display: flex; flex-direction: column; align-items: center; }
+.canvas-container { position: relative; width: 400px; height: 400px; }
 
 #roulette-canvas {
     border-radius: 50%;
@@ -259,12 +253,26 @@ body {
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.1s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-.spin-btn:hover {
-    background-color: #218838;
+.spin-btn:hover { background-color: #218838; }
+.spin-btn:active { transform: scale(0.95); }
+.spin-btn:disabled { background-color: #555; cursor: not-allowed; box-shadow: none; }
+
+/* 🛑 수동 모드(직접)일 때 빨간색 STOP 버튼 스타일 */
+.spin-btn.stop-mode {
+    background-color: #dc3545;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.6);
+    animation: pulse 1s infinite alternate;
+}
+
+.spin-btn.stop-mode:hover { background-color: #c82333; }
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
 }
 
 .spin-result {
@@ -272,4 +280,5 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: #f0f0f0;
+    text-align: center;
 }
